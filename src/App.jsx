@@ -178,7 +178,7 @@ else:
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:5000/api/help",
+        "https://labready.onrender.com/api/help",
         {
           method: "POST",
           headers: {
