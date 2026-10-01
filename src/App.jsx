@@ -126,8 +126,8 @@ else:
     experiments.length === 0
       ? 0
       : Math.round(
-          (completedCount / experiments.length) * 100
-        );
+        (completedCount / experiments.length) * 100
+      );
 
   // =========================
   // HELPERS
@@ -251,7 +251,7 @@ else:
         <button
           className={
             activePage === "experiments" ||
-            activePage === "experiment"
+              activePage === "experiment"
               ? "side-link active"
               : "side-link"
           }
@@ -344,14 +344,14 @@ else:
           {activePage === "dashboard"
             ? "Dashboard"
             : activePage === "experiments"
-            ? "Experiments"
-            : activePage === "experiment"
-            ? "Experiment"
-            : activePage === "assistant"
-            ? "I'm Stuck"
-            : activePage === "progress"
-            ? "Progress"
-            : "Catch Up"}
+              ? "Experiments"
+              : activePage === "experiment"
+                ? "Experiment"
+                : activePage === "assistant"
+                  ? "I'm Stuck"
+                  : activePage === "progress"
+                    ? "Progress"
+                    : "Catch Up"}
         </span>
       </div>
 
@@ -1350,46 +1350,50 @@ else:
   // =========================
 
   return (
-    <div className="app">
+    <>
+      <div>🚀 Now live on the web</div>
+      <div className="app">
 
-      <Sidebar />
+        <Sidebar />
 
-      <div className="main-area">
+        <div className="main-area">
 
-        <Topbar />
+          <Topbar />
 
-        {activePage === "dashboard" && (
-          <Dashboard />
-        )}
-
-        {activePage === "experiments" && (
-          <Experiments />
-        )}
-
-        {activePage === "experiment" &&
-          selectedExperiment && (
-            <ExperimentDetail />
+          {activePage === "dashboard" && (
+            <Dashboard />
           )}
 
-        {activePage === "assistant" && (
-          <Assistant />
-        )}
+          {activePage === "experiments" && (
+            <Experiments />
+          )}
 
-        {activePage === "progress" && (
-          <ProgressPage />
-        )}
+          {activePage === "experiment" &&
+            selectedExperiment && (
+              <ExperimentDetail />
+            )}
 
-        {activePage === "catchup" && (
-          <CatchUp />
-        )}
+          {activePage === "assistant" && (
+            <Assistant />
+          )}
 
-        <footer className="footer">
-          LabReady • Learn. Experiment. Get Unstuck.
-        </footer>
+          {activePage === "progress" && (
+            <ProgressPage />
+          )}
+
+          {activePage === "catchup" && (
+            <CatchUp />
+          )}
+
+          <footer className="footer">
+            LabReady • Learn. Experiment. Get Unstuck.
+          </footer>
+
+        </div>
 
       </div>
 
-    </div>
+    </>
   );
 }
 
